@@ -73,7 +73,7 @@ public class AndroidDynamicClassLoader
 			DexClassLoader loader = new DexClassLoader(dexFilePath, dexDirPath, null, parentClassLoader);
 			return (Class) loader.loadClass(typeName);
     	} finally {
-    		//cleanupDexFiles();
+    		cleanupDexFiles();
     	}
     }
     
