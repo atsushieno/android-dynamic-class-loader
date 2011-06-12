@@ -31,6 +31,14 @@ public class AndroidDynamicClassLoader
 		if (!dir.exists())
 			dir.mkdir();
 	}
+	
+	public Class findClass (String typeName)
+	{
+		for (Class cls : classes)
+			if (cls.getName() == typeName)
+				return cls;
+		return null;
+	}
 
     public synchronized Class defineClass(String typeName, byte[] javaBytes, int offset, int length) throws ClassNotFoundException
     {
